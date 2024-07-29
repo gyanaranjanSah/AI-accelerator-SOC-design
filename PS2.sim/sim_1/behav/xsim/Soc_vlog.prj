@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../PSFPA/PSFPA.srcs/sources_1/new/FPA.v" \
+"../../../../../PSFPA/PSFPA.srcs/sources_1/new/FPM.v" \
+"../../../../../PSFPA/PSFPA.srcs/sources_1/new/LZD24bit.v" \
+"../../../../../PSFPA/PSFPA.srcs/sources_1/new/PE.v" \
+"../../../../../PSFPA/PSFPA.srcs/sources_1/new/Resister32bit.v" \
+"../../../../PS2.srcs/sources_1/new/Soc.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
