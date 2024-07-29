@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Apr  1 14:03:10 2024
+# Process ID: 5020
+# Current directory: D:/Vivado Projects/PS2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17928 D:\Vivado Projects\PS2\PS2.xpr
+# Log file: D:/Vivado Projects/PS2/vivado.log
+# Journal file: D:/Vivado Projects/PS2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Vivado Projects/PS2/PS2.xpr}
+update_compile_order -fileset sources_1

@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Apr  8 16:11:39 2024
+# Process ID: 17524
+# Current directory: D:/Vivado Projects/PS2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22668 D:\Vivado Projects\PS2\PS2.xpr
+# Log file: D:/Vivado Projects/PS2/vivado.log
+# Journal file: D:/Vivado Projects/PS2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Vivado Projects/PS2/PS2.xpr}
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir {D:/Vivado Projects/PS2/AI_IP} -vendor xilinx.com -library user -taxonomy /UserIP -import_files -set_current false
+ipx::unload_core {d:/Vivado Projects/PS2/AI_IP/component.xml}
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory {D:/Vivado\ Projects/PS2/AI_IP} {d:/Vivado Projects/PS2/AI_IP/component.xml}
+update_compile_order -fileset sources_1
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path {d:/Vivado Projects}
+close_project
+create_project project_1 {D:/Vivado Projects/PS2/AI_WITH_MICROBLAZE} -part xc7vx485tffg1157-1
+create_bd_design "design_101"
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  {{D:/Vivado Projects/PS2/AI_IP}} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:myip_ACCL_v1_0:1.0 myip_ACCL_v1_0_0
+endgroup
+delete_bd_objs [get_bd_cells myip_ACCL_v1_0_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { axi_intc {0} axi_periph {Enabled} cache {None} clk {New Clocking Wizard (100 MHz)} debug_module {Debug Only} ecc {None} local_mem {64KB} preset {None}}  [get_bd_cells microblaze_0]
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} CONFIG.RESET_TYPE {ACTIVE_LOW} CONFIG.RESET_PORT {resetn}] [get_bd_cells clk_wiz_1]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins clk_wiz_1/resetn]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port (100 MHz)} Manual_Source {Auto}}  [get_bd_pins clk_wiz_1/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
+endgroup
+delete_bd_objs [get_bd_nets reset_rtl_0_1] [get_bd_ports reset_rtl_0]
+connect_bd_net [get_bd_ports reset_rtl_0_0] [get_bd_pins clk_wiz_1/resetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/microblaze_0 (Periph)} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {Auto} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "/axi_bram_ctrl_0_bram" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:myip_ACCL_v1_0:1.0 myip_ACCL_v1_0_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/myip_ACCL_v1_0_0/m00_axi} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {/axi_mem_intercon} master_apm {0}}  [get_bd_intf_pins myip_ACCL_v1_0_0/m00_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/myip_ACCL_v1_0_0/s00_axi} intc_ip {/axi_mem_intercon} master_apm {0}}  [get_bd_intf_pins myip_ACCL_v1_0_0/s00_axi]
+endgroup
+regenerate_bd_layout
+save_bd_design
+validate_bd_design
+make_wrapper -files [get_files {{D:/Vivado Projects/PS2/AI_WITH_MICROBLAZE/project_1.srcs/sources_1/bd/design_101/design_101.bd}}] -top
+add_files -norecurse {{D:/Vivado Projects/PS2/AI_WITH_MICROBLAZE/project_1.srcs/sources_1/bd/design_101/hdl/design_101_wrapper.v}}

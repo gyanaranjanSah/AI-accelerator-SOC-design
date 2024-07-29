@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jul 30 01:19:15 2024
+# Process ID: 16112
+# Current directory: D:/Vivado Projects/PS2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9024 D:\Vivado Projects\PS2\PS2.xpr
+# Log file: D:/Vivado Projects/PS2/vivado.log
+# Journal file: D:/Vivado Projects/PS2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Vivado Projects/PS2/PS2.xpr}
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/Vivado Projects/ip_repo/myip_AI_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/Vivado Projects/ip_repo/AI_acclerator_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado Projects'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'd:/Vivado Projects' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'd:/Vivado Projects/PS2'.)
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'd:/Vivado Projects/ip_repo/myip_ACCL_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'd:/Vivado Projects/ip_repo/myip_AI_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'd:/Vivado Projects/ip_repo/AI_acclerator_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2018.3/data/ip'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:myip_ACCL_v1_0:1.0'. The one found in IP location 'd:/Vivado Projects' will take precedence over the same IP in locations: 
+   d:/Vivado Projects/PS2/AI_IP
+   d:/Vivado Projects/PS2_I-Chip/PS2/AI_IP
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:PE:1.0'. The one found in IP location 'd:/Vivado Projects/PE_PS/PE/PE.srcs/sources_1/bd/mref/PE' will take precedence over the same IP in location d:/Vivado Projects/PE_PS/PrE/PrE.srcs/sources_1/bd/mref/PE
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:myip:1.0'. The one found in IP location 'd:/Vivado Projects/VIVADO TESTINGS/ip_repo/myip_1.0' will take precedence over the same IP in locations: 
+   d:/Vivado Projects/ip_repo/myip_1.0
+   d:/Vivado Projects/PS2/ip_repo/myip_1.0
+   d:/Vivado Projects/PS2_I-Chip/PS2/ip_repo/myip_1.0
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 778.234 ; gain = 150.449
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 30 01:19:49 2024...

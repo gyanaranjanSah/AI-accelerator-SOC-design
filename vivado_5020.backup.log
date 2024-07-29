@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Apr  1 14:03:10 2024
+# Process ID: 5020
+# Current directory: D:/Vivado Projects/PS2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17928 D:\Vivado Projects\PS2\PS2.xpr
+# Log file: D:/Vivado Projects/PS2/vivado.log
+# Journal file: D:/Vivado Projects/PS2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Vivado Projects/PS2/PS2.xpr}
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/Vivado Projects/ip_repo/myip_AI_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/Vivado Projects/ip_repo/AI_acclerator_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Vivado Projects/ip_repo/myip_AI_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Vivado Projects/ip_repo/AI_acclerator_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 789.867 ; gain = 159.977
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  1 15:08:45 2024...
